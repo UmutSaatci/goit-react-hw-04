@@ -2,19 +2,15 @@
   list-style: none;
   padding: 0;
   margin: 30px auto;
-  max-width: 1200px; /* Geniş ekranlarda taşmayı önler */
+  max-width: 1200px;
   width: 100%;
-
-  /* Modern Izgara (Grid) Yapısı */
   display: grid;
-  /* Ekran boyutuna göre otomatik genişleyen sütunlar (Minimum 250px) */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px; /* Resimlerin arasındaki dikey ve yatay boşluk */
+  gap: 20px;
   padding: 0 24px;
   box-sizing: border-box;
 }
 
-/* Her Bir Liste Elemanı (li) */
 .galleryItem {
   display: flex;
   justify-content: center;

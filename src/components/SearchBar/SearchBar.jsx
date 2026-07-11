@@ -1,17 +1,16 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import css from "./SearchBox.module.css"; // Senin kendi CSS Module importun
+import css from "./SearchBox.module.css";
 import clsx from "clsx";
 
 const SearchBar = ({ onSearch }) => {
-  const [term, setTerm] = useState(""); // İnput değerini tutan state
+  const [term, setTerm] = useState("");
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
     if (term.trim() === "") {
-      // 2. Şık ve modern bir hata bildirimi fırlatıyoruz
       toast.error("Please enter a text to search for images!", {
-        duration: 3000, // Bildirim ekranda 3 saniye kalır
+        duration: 3000,
         style: {
           background: "#fff",
           color: "#dc2626",
@@ -19,11 +18,9 @@ const SearchBar = ({ onSearch }) => {
           borderRadius: "8px",
         },
       });
-      return; // Fonksiyonu burada kesiyoruz (Arama tetiklenmez)
+      return;
     }
 
-    // Aksi takdirde, propları çağırın
-    // ve ona alanın değerini aktarın
     onSearch(term);
     setTerm("");
   };
@@ -31,7 +28,7 @@ const SearchBar = ({ onSearch }) => {
     <header className={css.headerBar}>
       <form onSubmit={handleSubmit} className={css.searchForm}>
         <input
-          className={css.searchInput} // Eski "input" yerine modül sınıfını verdik
+          className={css.searchInput}
           type="text"
           value={term}
           onChange={(evt) => setTerm(evt.target.value)}

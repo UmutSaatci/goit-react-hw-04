@@ -13,7 +13,7 @@ const ImageGallery = ({ images, onImageClick }) => {
               alt={image.description}
               onClick={() =>
                 onImageClick(image.urls.regular, image.description)
-              } // Tıklanınca Unsplash'ten gelen yüksek kaliteli 'regular' veya 'full' boyutunu gönderiyoruz
+              }
             />
           </li>
         );

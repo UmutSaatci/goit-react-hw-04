@@ -6,13 +6,13 @@
   padding: 40px 24px;
   margin: 20px auto;
   max-width: 500px;
-  background-color: #fef2f2; /* Hafif kırmızımsı arka plan */
+  background-color: #fef2f2;
   border: 1px solid #fee2e2;
   border-radius: 8px;
 }
 
 .errorText {
-  color: #dc2626; /* Belirgin hata kırmızısı */
+  color: #dc2626;
   font-size: 1rem;
   font-weight: 500;
   margin: 0;

@@ -1,36 +1,31 @@
 .cardContainer {
   width: 100%;
-  height: 220px; /* Tüm kartların eşit boyutta durması için sabit yükseklik */
-  overflow: hidden; /* Resim büyüdüğünde kutunun dışına taşmasını engeller */
-  border-radius: 10px; /* Modern ve şık bir köşe ovalliği */
+  height: 220px;
+  overflow: hidden;
+  border-radius: 10px;
   box-shadow:
     0 4px 6px -1px rgba(0, 0, 0, 0.05),
     0 2px 4px -1px rgba(0, 0, 0, 0.03);
-  background-color: #f1f5f9; /* Resim yüklenene kadar arkada duracak yumuşak gri */
+  background-color: #f1f5f9;
   cursor: pointer;
   transition:
     transform 0.25s ease-in-out,
     box-shadow 0.25s ease-in-out;
 }
 
-/* Kartın Üzerine Gelindiğinde (Hover) */
 .cardContainer:hover {
-  transform: translateY(
-    -4px
-  ); /* Kartı hafifçe yukarı kaldırarak derinlik hissi verir */
-  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.12); /* Gölgeyi belirginleştirir */
+  transform: translateY(-4px);
+  box-shadow: 0 12px 20px -3px rgba(0, 0, 0, 0.12);
 }
 
-/* İçerideki Gerçek Resim Etiketi (img) */
 .cardImage {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Resmin en-boy oranını bozmadan kutuyu jilet gibi doldurur */
-  transition: transform 0.3s ease-in-out; /* Yakınlaşma efektinin süresi */
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
   cursor: zoom-in;
 }
 
-/* Kartın üzerine gelindiğinde sadece içindeki resmin büyümesi için */
 .cardContainer:hover .cardImage {
-  transform: scale(1.06); /* Resmi %6 oranında yumuşakça yakınlaştırır */
+  transform: scale(1.06);
 }
