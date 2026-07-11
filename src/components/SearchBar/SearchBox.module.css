@@ -1,0 +1,72 @@
+.headerBar {
+  background-color: #393294;
+  width: 100vw; /* 100% yerine ekranın tam genişliğini (Viewport Width) hedefliyoruz */
+  margin-left: calc(
+    -50vw + 50%
+  ); /* Eğer üst kapsayıcıda bir max-width varsa onu yırtıp dışarı taşmasını sağlar */
+  padding: 16px 24px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-sizing: border-box; /* Padding değerlerinin genişliği patlatmasını engeller */
+}
+
+/* İçerideki Form Elemanı */
+.searchForm {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* Çok geniş ekranlarda formun aşırı büyümesini engeller */
+  gap: 8px; /* Input ile buton arasındaki boşluk */
+}
+
+/* Metin Giriş Alanı (input) */
+.searchInput {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 0.95rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px; /* Galeri kartlarıyla uyumlu köşe ovalliği */
+  background-color: #f8fafc;
+  outline: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Input'a Tıklanınca (Focus Durumu) */
+.searchInput:focus {
+  border-color: #3b82f6; /* Modern mavi odaklanma rengi */
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15); /* Hafif parlama efekti */
+}
+
+/* Arama Butonu */
+.searchButton {
+  padding: 12px 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #393294;
+  background-color: #ffffff; /* Canlı mavi buton rengi */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease-in-out,
+    transform 0.1s ease;
+  white-space: nowrap;
+}
+
+/* Butonun Üzerine Gelince (Hover) */
+.searchButton:hover {
+  background-color: #393294;
+  color: #ffffff;
+  border: 1px solid white;
+}
+
+/* Butona Tıklanınca (Mekanik Esneme) */
+.searchButton:active {
+  transform: scale(0.98);
+}

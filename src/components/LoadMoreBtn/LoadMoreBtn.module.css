@@ -1,0 +1,31 @@
+.btnWrapper {
+  display: flex;
+  justify-content: center;
+  margin: 32px 0;
+  width: 100%;
+}
+
+.loadMoreBtn {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #393294; /* Arama butonuyla aynı canlı mavi */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+  transition:
+    background-color 0.2s ease-in-out,
+    transform 0.1s ease;
+}
+
+.loadMoreBtn:hover {
+  background-color: #ffffff;
+  color: #393294;
+  border: 1px solid #393294;
+}
+
+.loadMoreBtn:active {
+  transform: scale(0.98);
+}

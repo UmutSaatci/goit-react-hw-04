@@ -1,0 +1,20 @@
+.errorContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 40px 24px;
+  margin: 20px auto;
+  max-width: 500px;
+  background-color: #fef2f2; /* Hafif kırmızımsı arka plan */
+  border: 1px solid #fee2e2;
+  border-radius: 8px;
+}
+
+.errorText {
+  color: #dc2626; /* Belirgin hata kırmızısı */
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  text-align: center;
+}
