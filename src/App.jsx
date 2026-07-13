@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Modal from "react-modal";
+
 import { Toaster } from "react-hot-toast";
 import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import ImageGallery from "./components/ImageGallery/ImageGallery.jsx";
@@ -7,11 +7,9 @@ import LoadMoreBtn from "./components/LoadMoreBtn/LoadMoreBtn.jsx";
 import Loader from "./components/Loader/Loader.jsx";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage.jsx";
 import searchImages from "./articles-api.js";
+import ImageModal from "./components/ImageModal/ImageModal.jsx";
 import css from "./App.module.css";
 
-if (typeof window !== "undefined") {
-  Modal.setAppElement("#root");
-}
 function App() {
   const [images, setImages] = useState([]);
   const [query, setQuery] = useState("");
@@ -41,6 +39,10 @@ function App() {
     }
   };
 
+  const handleLoadMore = () => {
+    setPage((prevPage) => prevPage + 1);
+  };
+
   const openModal = (largeUrl, altText) => {
     setSelectedImage({ url: largeUrl, alt: altText });
     setModalIsOpen(true);
@@ -49,10 +51,6 @@ function App() {
   const closeModal = () => {
     setModalIsOpen(false);
     setSelectedImage({ url: "", alt: "" });
-  };
-
-  const handleLoadMore = () => {
-    setPage((prevPage) => prevPage + 1);
   };
 
   useEffect(() => {
@@ -89,27 +87,12 @@ function App() {
         <LoadMoreBtn onClick={handleLoadMore} />
       )}
 
-      <Modal
+      <ImageModal
         isOpen={modalIsOpen}
-        onRequestClose={closeModal}
-        contentLabel="Image Modal"
-        className={css.modalContent}
-        overlayClassName={css.modalOverlay}
-      >
-        <div className={css.imageWrapper}>
-          {selectedImage.url ? (
-            <img
-              src={selectedImage.url}
-              alt={selectedImage.alt || "Large Image"}
-              className={css.modalImage}
-            />
-          ) : null}
-
-          {selectedImage.alt && (
-            <p className={css.modalText}>{selectedImage.alt}</p>
-          )}
-        </div>
-      </Modal>
+        Close={closeModal}
+        url={selectedImage.url}
+        alt={selectedImage.alt}
+      />
     </>
   );
 }
